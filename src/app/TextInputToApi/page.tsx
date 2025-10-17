@@ -2,7 +2,7 @@
 
 import { useState, ChangeEvent, FormEvent, JSX } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import Graph from "../Graph/page";
+import GraphSection from "@/components/GraphSection";
 
 type NodeScore = {
   id: string;
@@ -77,7 +77,7 @@ export default function TextInputToApi(): JSX.Element {
           value={100}
         />
       ) : nodes.length > 0 ? (
-        <Graph
+        <GraphSection
           nodes={nodes}
           edges={edges}
           edgeThreshold={committedEdgeThreshold}
