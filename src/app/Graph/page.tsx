@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { DataSet, Edge, Network, Node } from "vis-network/standalone";
 
