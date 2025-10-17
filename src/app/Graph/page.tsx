@@ -1,3 +1,4 @@
+"use client";
 // src/app/Graph/page.tsx
 import GraphVis, { NodeScore, EdgeScore } from "@/components/GraphVis";
 import graphData from "@/data/sampleGraph.json";
