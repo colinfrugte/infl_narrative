@@ -15,6 +15,10 @@ type EdgeScore = {
   score: number;
 };
 
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ??
+  "http://127.0.0.1:8000";
+
 export default function TextInputToApi(): JSX.Element {
   const [text, setText] = useState<string>("");
   const [nodes, setNodes] = useState<NodeScore[]>([]);
@@ -40,7 +44,7 @@ export default function TextInputToApi(): JSX.Element {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/scores", {
+      const res = await fetch(`${API_BASE_URL}/scores`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
