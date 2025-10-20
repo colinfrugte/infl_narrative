@@ -15,9 +15,12 @@ type EdgeScore = {
   score: number;
 };
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ??
-  "http://127.0.0.1:8000";
+// ✅ Trage hier die URL DEINES Backends ein (https, ohne trailing slash)
+const DEFAULT_API = "https://infl-narr-model.onrender.com";
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || DEFAULT_API).replace(
+  /\/+$/,
+  ""
+); // trailing slashes entfernen
 
 export default function TextInputToApi(): JSX.Element {
   const [text, setText] = useState<string>("");
